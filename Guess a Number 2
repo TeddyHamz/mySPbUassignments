@@ -1,0 +1,52 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main()
+{
+    int n = 1000;
+    int m = 1;
+    int average = (n + m) >> 1 ;
+    char answer[100];
+
+    printf("Think of a number in the range of 1-%d and I'll guess it.\n",n);
+    m = n/2 ;
+
+    while( n > m )
+    {   
+        average = (n + m) >> 1;
+        printf("Is the number %d?[y/n]", m);
+        scanf("%s",answer);
+
+        if(strcmp(answer,"y")==0)
+                        {
+                            m = average + 1;
+                            
+                        }       
+                        
+        else if (strcmp(answer,"n")==0)
+            {
+                n = average;
+                
+            }
+        else {
+            printf("ERROR ):");
+            
+        }
+    }
+
+    if (m == n) {
+            printf("I have have succeeded in guessing your number! Haha! %d\n",m);
+            
+                 }
+    else {
+            printf("Hmmmm...Someone must be cheating, definitely not me, try again.");
+            
+         }
+        
+    return 0;
+        
+    
+
+            
+}
