@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+int main(){
+int xa; int ya; int xb; int yb; int xc; int yc;
+float p1, p2, p3, d1, d2, d3;
+printf("Please enter the 3 coordinates of the test triangle: \n");
+scanf("%d %d %d %d %d %d", &xa, &ya, &xb, &yb, &xc, &yc);
+p1 = fabs(sqrt((xb - xa) * (xb - xa) + (yb - ya) * (yb - ya)));
+p2 = fabs(sqrt((xc - xa) * (xc - xa) + (yc - ya) * (yc - ya)));
+p3 = fabs(sqrt((xc - xb) * (xc - xb) + (yc - yb) * (yc - yb)));
+d1 = p1 * p1;
+d2 = p2 * p2;
+d3 = p3 * p3;
+if (d1 * d1 == d2 * d2 + d2 * d2 + d3 * d3 || d2 * d2 == d1 * d1 + d3 * d3 || d3 * d3 == d1 * d1 + d2 * d2){
+printf("Triangle is right-angled(прямоугольник)\n");
+
+} else {
+printf("The triangle is not right-angled(прямоугольник.\n");
+}
+return 0;
+}
